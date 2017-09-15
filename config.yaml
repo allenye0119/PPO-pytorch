@@ -1,0 +1,36 @@
+random_seed: 19
+environment: 'Acrobot-v1'
+model:
+    ckpt_path: null
+    gamma: 0.99
+    lmbda: 0.95
+    epsilon: 0.2
+    beta: 0.01
+    policy:
+        dropout_rate: 0.0
+        intermediate_activation: 'ReLU'
+        final_activation: 'Softmax'
+    value:
+        dropout_rate: 0.0
+        intermediate_activation: 'ReLU'
+        final_activation: ''
+    #optimizer:
+        #algorithm: 'Adam'
+        #policy_learning_rate: 1.0e-03
+        #value_learning_rate: 1.0e-02
+    policy_optimizer:
+        algorithm: 'Adam'
+        learning_rate: 1.0e-4
+    value_optimizer:
+        algorithm: 'Adam'
+        learning_rate: 1.0e-3
+train:
+    ckpt_dir: './train'
+    experiment: 'gamma-0.99_lmbda-0.95_epsilon-0.2_beta-0.01_Acrobot-v1'
+    num_rounds: 1000
+    num_train_iterations: 50
+    log_interval: 1
+    num_train_episodes: 50
+    batch_size: 200
+    num_train_epochs: 10
+    num_eval_episodes: 10

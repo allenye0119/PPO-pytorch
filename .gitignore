@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# vim temp file
+*.swp
+
+# model
+train/
